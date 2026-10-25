@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Full Circuit Smart Home Technology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column of full-width bands. One brand, one voice. Copper (power) and Cat6 blue (signal) run together through the design as the two halves of one team. */
+:root{
+  --bg:#f3f4f2;
+  --surface:#ffffff;
+  --ink:#1b2126;
+  --muted:#58626a;
+  --line:#d5d9d8;
+  --copper:#b4612a;
+  --cat:#2f6fa8;
+  --band:#1b2126;
+  --band-ink:#eef0ee;
+  --hl:#fff3c4;
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --f-body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#13171a;--surface:#1b2024;--ink:#e8ebe9;--muted:#9aa4aa;--line:#2e353a;
+  --copper:#d98a52;--cat:#6aa6dc;--band:#0c0f11;--band-ink:#e8ebe9;--hl:#4a3f12;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#13171a;--surface:#1b2024;--ink:#e8ebe9;--muted:#9aa4aa;--line:#2e353a;
+  --copper:#d98a52;--cat:#6aa6dc;--band:#0c0f11;--band-ink:#e8ebe9;--hl:#4a3f12;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:72px}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;line-height:1.02;text-wrap:balance;margin:0;letter-spacing:.005em}
+h2{font-size:clamp(2.1rem,5vw,3.1rem);text-transform:uppercase}
+h3{font-size:1.45rem;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+.lede{max-width:62ch;color:var(--muted);font-size:1.1rem;margin-top:16px}
+.ph{background:var(--hl);border:1px dashed var(--copper);padding:0 .3em;border-radius:3px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cat);outline-offset:3px}
+
+.draft{background:var(--hl);font-family:var(--f-mono);font-size:.8rem;padding-block:8px}
+.draft .wrap{display:flex;gap:8px;flex-wrap:wrap}
+
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:16px}
+.mark{font-family:var(--f-display);font-weight:800;font-size:1.45rem;text-transform:uppercase;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+.mark span{display:flex;flex-direction:column;line-height:1}
+.mark small{font-family:var(--f-mono);font-weight:500;font-size:.62rem;letter-spacing:.16em;color:var(--muted);margin-top:4px}
+.mark i{display:block;width:26px;height:26px;border-radius:50%;background:linear-gradient(90deg,var(--copper) 50%,var(--cat) 50%)}
+nav{display:flex;gap:20px;flex-wrap:wrap;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+.hero{padding-block:80px 64px}
+.hero h1{font-size:clamp(2.8rem,8.5vw,5.6rem);text-transform:uppercase;max-width:15ch}
+.hero h1 .cu{color:var(--copper)}
+.hero h1 .lv{color:var(--cat)}
+.hero .lede{margin-top:24px}
+.wires{display:flex;flex-direction:column;gap:6px;margin-top:40px;max-width:520px}
+.wires span{height:6px;border-radius:3px}
+.wires span:nth-child(1){background:var(--copper)}
+.wires span:nth-child(2){background:var(--cat)}
+.facts{display:flex;gap:12px 32px;flex-wrap:wrap;margin-top:28px;font-family:var(--f-mono);font-size:.85rem;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:500}
+
+.why{background:var(--surface);border-block:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-top:40px}
+.why-grid div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.why-grid p{color:var(--muted)}
+
+.services{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.svc .wire{height:4px;width:48px;border-radius:2px;background:linear-gradient(90deg,var(--copper) 50%,var(--cat) 50%)}
+.svc ul{margin:0;padding-left:1.1em;color:var(--muted);font-size:.96rem;display:flex;flex-direction:column;gap:4px}
+
+.custom{background:var(--band);color:var(--band-ink)}
+.custom .eyebrow,.custom .lede{color:color-mix(in srgb,var(--band-ink) 65%,transparent)}
+.custom-list{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:color-mix(in srgb,var(--band-ink) 18%,transparent);border:1px solid color-mix(in srgb,var(--band-ink) 18%,transparent)}
+.custom-list div{background:var(--band);padding:24px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.custom-list h3{color:var(--copper)}
+.custom-list p{color:color-mix(in srgb,var(--band-ink) 72%,transparent);font-size:.98rem}
+
+.steps{margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;counter-reset:s}
+.steps li{list-style:none;display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:3px solid var(--ink);min-width:0}
+.steps li::before{counter-increment:s;content:"Step " counter(s);font-family:var(--f-mono);font-size:.78rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.steps p{color:var(--muted);font-size:.95rem}
+
+.team{background:var(--surface);border-block:1px solid var(--line)}
+.people{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+.person{display:flex;flex-direction:column;gap:12px;min-width:0}
+.person .role{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.person ul{margin:0;padding-left:1.1em;color:var(--muted)}
+.person p{color:var(--muted)}
+
+.contact-box{margin-top:40px;background:var(--surface);border:1px solid var(--line);border-radius:6px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.contact-box > div{padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.contact-box > div + div{border-left:1px solid var(--line)}
+@media (max-width:620px){.contact-box > div + div{border-left:0;border-top:1px solid var(--line)}}
+.contact-box .who{font-family:var(--f-display);font-weight:800;font-size:1.4rem;text-transform:uppercase}
+.line{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--f-mono);font-size:.95rem}
+.line span{user-select:all;overflow-wrap:anywhere;min-width:0}
+.copy{font:inherit;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:4px 10px;cursor:pointer}
+.copy:hover{border-color:var(--ink)}
+
+footer{padding-block:40px;border-top:1px solid var(--line);font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+footer .wrap{display:flex;flex-direction:column;gap:8px}
+@media (prefers-reduced-motion:no-preference){.copy{transition:border-color .15s}}
+body{margin:0}
+</style>
+</head>
+<body>
+
+<div class="draft"><div class="wrap"><b>DRAFT</b><span>Highlighted items are placeholders to confirm before launch.</span></div></div>
+
+<header><div class="wrap">
+  <div class="mark"><i aria-hidden="true"></i><span>Full Circuit<small>Smart Home Technology</small></span></div>
+  <nav aria-label="Sections"><a href="#services">Services</a><a href="#custom">Custom work</a><a href="#team">Team</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Electrical · AV · Smart home</p>
+  <h1>From the <span class="cu">breaker panel</span> to the <span class="lv">last button press</span></h1>
+  <p class="lede">We design, wire, install and program the whole system: the power behind it, the technology in it, and the automation that ties it together. One team, licensed for both the electrical and the low-voltage side, from rough-in to final walkthrough.</p>
+  <div class="wires" aria-hidden="true"><span></span><span></span></div>
+  <div class="facts">
+    <span><b>Licensed</b> C-10 Electrical + C-7 Low Voltage</span>
+    <span><b>~30 years</b> in AV integration</span>
+    <span><b>Based in</b> Santa Clarita Valley</span>
+  </div>
+</div></section>
+
+<section class="why"><div class="wrap">
+  <p class="eyebrow">Why us</p>
+  <h2>One team for the whole job</h2>
+  <div class="why-grid">
+    <div><h3>No finger-pointing</h3><p>The same people wire it, install it and program it. If something isn't right, we fix it. There's no other trade to blame.</p></div>
+    <div><h3>Power planned with the system</h3><p>Dedicated circuits, recessed TV boxes, rack power and surge protection are designed in from the start instead of patched in afterward.</p></div>
+    <div><h3>One schedule, one proposal</h3><p>Power and low-voltage rough-in happen in the same visit while walls and ceilings are open, all on one proposal.</p></div>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <p class="eyebrow">Services</p>
+  <h2>What we build</h2>
+  <div class="services">
+    <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Power and infrastructure</h3>
+      <ul><li>Panel upgrades and subpanels</li><li>Dedicated circuits for racks, theaters and network closets</li><li>EV charger installation</li><li>Smart panels, solar and battery electrical work</li></ul></div>
+    <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Home theater and audio</h3>
+      <ul><li>Dedicated theaters and media rooms</li><li>Professional picture and sound calibration</li><li>Whole-home and outdoor audio</li><li>TV mounting with recessed power and cabling</li></ul></div>
+    <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Lighting</h3>
+      <ul><li>Recessed lighting and fixtures</li><li>Smart switches, dimmers and keypads</li><li>Scenes and schedules for each room</li></ul></div>
+    <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Automation and control</h3>
+      <ul><li>Control4 and Home Assistant systems</li><li>Remotes, touchscreens and voice control</li><li>Shades, HVAC, irrigation and laundry automation</li></ul></div>
+    <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Network and security</h3>
+      <ul><li>UniFi gateways, switches and WiFi</li><li>Structured cabling, run and terminated</li><li>Cameras, video doorbells and door access</li></ul></div>
+    <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Energy and monitoring</h3>
+      <ul><li>Solar and battery monitoring</li><li>Whole-house water and gas usage from the meter</li><li>Leak detection and automatic water shutoff</li></ul></div>
+  </div>
+</div></section>
+
+<section class="custom" id="custom"><div class="wrap">
+  <p class="eyebrow">Custom work</p>
+  <h2>When the product you need doesn't exist yet</h2>
+  <p class="lede">Plenty of devices don't talk to each other out of the box. We build the missing piece instead of telling you it can't be done.</p>
+  <div class="custom-list">
+    <div><h3>Custom control drivers</h3><p>Control4 drivers for streaming boxes, cameras and devices that have no official support.</p></div>
+    <div><h3>Cloud gear, controlled locally</h3><p>Smart locks, power strips and other cloud-only devices brought into Home Assistant so they keep working without the manufacturer's app.</p></div>
+    <div><h3>Utility monitoring</h3><p>Water and gas usage read straight from the meter, alongside solar and battery data, on one dashboard.</p></div>
+    <div><h3>Replacements for discontinued parts</h3><p>Purpose-built hardware to stand in for modules the manufacturer stopped making, so a working system doesn't have to be ripped out.</p></div>
+    <div><h3>Custom fabricated hardware</h3><p>Stainless adapter plates and mounts so new equipment fits cleanly where the old equipment was.</p></div>
+    <div><h3>Energy-aware automation</h3><p>Fans, irrigation, laundry and lighting that respond to real sensor data, not just a timer.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="eyebrow">How a project runs</p>
+  <h2>Start to finish</h2>
+  <ol class="steps">
+    <li><h3>Walkthrough</h3><p>We look at the power, the wiring and how you want to use each room.</p></li>
+    <li><h3>One proposal</h3><p>Equipment, electrical and labor on one document.</p></li>
+    <li><h3>Rough-in</h3><p>Circuits, boxes and low-voltage cable go in during the same visit.</p></li>
+    <li><h3>Install</h3><p>Fixtures, devices, equipment and racks are installed and powered up.</p></li>
+    <li><h3>Program and hand over</h3><p>Everything is programmed, tested and walked through with you.</p></li>
+  </ol>
+</div></section>
+
+<section class="team" id="team"><div class="wrap">
+  <p class="eyebrow">The team</p>
+  <h2>Who you'll work with</h2>
+  <div class="people">
+    <div class="person">
+      <span class="role">Systems design, AV and automation</span>
+      <h3>Helmut Kaczmarek</h3>
+      <p>About 30 years in AV integration, including:</p>
+      <ul>
+        <li>QA engineering on Dolby Vision 2 at Dolby Laboratories</li>
+        <li>Calibration work at THX / Lucasfilm</li>
+        <li>Theater operations at the Academy of Motion Picture Arts and Sciences</li>
+      </ul>
+    </div>
+    <div class="person">
+      <span class="role">Licensed electrician</span>
+      <h3>Alex Sedano</h3>
+      <p class="ph">Short bio from Alex: background, years in the trade, what he likes working on.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <p class="eyebrow">Contact</p>
+  <h2>Start with a walkthrough</h2>
+  <p class="lede">Serving the Santa Clarita Valley <span class="ph">and greater Los Angeles and Ventura County</span>.</p>
+  <div class="contact-box">
+    <div><span class="who">Helmut</span>
+      <div class="line"><span id="h-ph">(818) 568-5359</span><button class="copy" data-t="h-ph" id="copy-h-ph">Copy</button></div>
+      <div class="line"><span id="h-em">info@finaltouchav.com</span><button class="copy" data-t="h-em" id="copy-h-em">Copy</button></div>
+    </div>
+    <div><span class="who">Alex</span>
+      <div class="line"><span id="a-ph">(818) 437-8205</span><button class="copy" data-t="a-ph" id="copy-a-ph">Copy</button></div>
+      <div class="line"><span class="ph">email to confirm</span></div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>Full Circuit Smart Home Technology. Electrical work: Smartech Electric Inc, CSLB #1156784 (C-10). Low-voltage, AV and automation work: Final Touch AV, Helmut Kaczmarek, CSLB #841838 (C-7).</span>
+</div></footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.t), t=el.textContent.trim();
+    function ok(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)}
+    function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}
+    try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
+  });
+});
+</script>
+</body>
+</html>
