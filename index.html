@@ -93,6 +93,14 @@ nav a:hover{color:var(--ink)}
 .steps li::before{counter-increment:s;content:"Step " counter(s);font-family:var(--f-mono);font-size:.78rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 .steps p{color:var(--muted);font-size:.95rem}
 
+.day{background:var(--surface);border-block:1px solid var(--line)}
+.timeline{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.slotd{display:flex;flex-direction:column;gap:8px;padding-top:14px;border-top:3px solid var(--copper);min-width:0}
+.slotd:nth-child(even){border-top-color:var(--cat)}
+.slotd time{font-family:var(--f-mono);font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.slotd p{color:var(--muted);font-size:.96rem}
+.brands{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px}
+.brands span{font-family:var(--f-mono);font-size:.85rem;border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--surface)}
 .team{background:var(--surface);border-block:1px solid var(--line)}
 .people{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
 .person{display:flex;flex-direction:column;gap:12px;min-width:0}
@@ -122,7 +130,7 @@ body{margin:0}
 
 <header><div class="wrap">
   <div class="mark"><i aria-hidden="true"></i><span>Full Circuit<small>Smart Home Technology</small></span></div>
-  <nav aria-label="Sections"><a href="#services">Services</a><a href="#custom">Custom work</a><a href="#team">Team</a><a href="#contact">Contact</a></nav>
+  <nav aria-label="Sections"><a href="#services">Services</a><a href="#custom">Custom work</a><a href="#lifestyle">Lifestyle</a><a href="#team">Team</a><a href="#contact">Contact</a></nav>
 </div></header>
 
 <main>
@@ -145,6 +153,9 @@ body{margin:0}
     <div><h3>No finger-pointing</h3><p>The same people wire it, install it and program it. If something isn't right, we fix it. There's no other trade to blame.</p></div>
     <div><h3>Power planned with the system</h3><p>Dedicated circuits, recessed TV boxes, rack power and surge protection are designed in from the start instead of patched in afterward.</p></div>
     <div><h3>One schedule, one proposal</h3><p>Power and low-voltage rough-in happen in the same visit while walls and ceilings are open, all on one proposal.</p></div>
+    <div><h3>Hidden wiring</h3><p>Clean, professional installations with no visible wire runs. Racks are tidy and easy to service.</p></div>
+    <div><h3>Expert calibration</h3><p>Picture and sound calibrated with professional instruments, plus speaker tuning and room correction for reference-quality results.</p></div>
+    <div><h3>Ongoing support</h3><p>We don't install and disappear. Remote diagnostics, upgrades and on-site service are part of the job.</p></div>
   </div>
 </div></section>
 
@@ -155,13 +166,13 @@ body{margin:0}
     <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Power and infrastructure</h3>
       <ul><li>Panel upgrades and subpanels</li><li>Dedicated circuits for racks, theaters and network closets</li><li>EV charger installation</li><li>Smart panels, solar and battery electrical work</li></ul></div>
     <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Home theater and audio</h3>
-      <ul><li>Dedicated theaters and media rooms</li><li>Professional picture and sound calibration</li><li>Whole-home and outdoor audio</li><li>TV mounting with recessed power and cabling</li></ul></div>
+      <ul><li>4K and 8K laser projectors and displays</li><li>Dolby Atmos and DTS:X surround</li><li>Professional picture and sound calibration</li><li>Kaleidescape movie servers and cinema masking</li><li>Whole-home and outdoor audio</li></ul></div>
     <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Lighting</h3>
-      <ul><li>Recessed lighting and fixtures</li><li>Smart switches, dimmers and keypads</li><li>Scenes and schedules for each room</li></ul></div>
-    <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Automation and control</h3>
-      <ul><li>Control4 and Home Assistant systems</li><li>Remotes, touchscreens and voice control</li><li>Shades, HVAC, irrigation and laundry automation</li></ul></div>
+      <ul><li>Recessed, outdoor and landscape lighting</li><li>Lutron and Philips Hue, smart dimmers and keypads</li><li>One-tap scenes like Movie Mode</li><li>Circadian and scheduled lighting</li></ul></div>
+    <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Automation and climate</h3>
+      <ul><li>Control4, RTI, Home Assistant and AVA Remote</li><li>One remote, one app for the whole house</li><li>Multi-zone climate with home, away and vacation modes</li><li>Shades, irrigation and laundry automation</li></ul></div>
     <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Network and security</h3>
-      <ul><li>UniFi gateways, switches and WiFi</li><li>Structured cabling, run and terminated</li><li>Cameras, video doorbells and door access</li></ul></div>
+      <ul><li>UniFi gateways, switches and WiFi</li><li>Structured cabling, run and terminated</li><li>IP cameras with live and recorded video on your phone</li><li>Video doorbells, door access and alarm integration</li></ul></div>
     <div class="svc"><span class="wire" aria-hidden="true"></span><h3>Energy and monitoring</h3>
       <ul><li>Solar and battery monitoring</li><li>Whole-house water and gas usage from the meter</li><li>Leak detection and automatic water shutoff</li></ul></div>
   </div>
@@ -178,6 +189,17 @@ body{margin:0}
     <div><h3>Replacements for discontinued parts</h3><p>Purpose-built hardware to stand in for modules the manufacturer stopped making, so a working system doesn't have to be ripped out.</p></div>
     <div><h3>Custom fabricated hardware</h3><p>Stainless adapter plates and mounts so new equipment fits cleanly where the old equipment was.</p></div>
     <div><h3>Energy-aware automation</h3><p>Fans, irrigation, laundry and lighting that respond to real sensor data, not just a timer.</p></div>
+  </div>
+</div></section>
+
+<section class="day" id="lifestyle"><div class="wrap">
+  <p class="eyebrow">A day in the life</p>
+  <h2>Your home, working with you</h2>
+  <div class="timeline">
+    <div class="slotd"><time>7:00 AM</time><h3>Good morning</h3><p>Shades rise, the thermostat wakes to 70°, a morning playlist starts softly and the coffee maker turns on, from one tap or a schedule.</p></div>
+    <div class="slotd"><time>12:00 PM</time><h3>Work from home</h3><p>Office lights shift to focused white. The doorbell camera notifies your phone, and every camera is one app away.</p></div>
+    <div class="slotd"><time>6:30 PM</time><h3>Movie night</h3><p>Lights dim to amber, the projector powers on, Atmos kicks in and the HVAC adjusts, all from one button.</p></div>
+    <div class="slotd"><time>10:00 PM</time><h3>Good night</h3><p>Lights off, doors locked, alarm armed, thermostat down. The EV starts charging when off-peak rates begin.</p></div>
   </div>
 </div></section>
 
@@ -215,10 +237,16 @@ body{margin:0}
   </div>
 </div></section>
 
+<section><div class="wrap">
+  <p class="eyebrow">Platforms and brands</p>
+  <h2>What we install</h2>
+  <div class="brands"><span>Control4</span><span>RTI</span><span>Home Assistant</span><span>AVA Remote</span><span>Lutron</span><span>Philips Hue</span><span>Kaleidescape</span><span>Sony</span><span>Dolby Atmos</span><span>Ubiquiti UniFi</span></div>
+</div></section>
+
 <section id="contact"><div class="wrap">
   <p class="eyebrow">Contact</p>
   <h2>Start with a walkthrough</h2>
-  <p class="lede">Serving the Santa Clarita Valley <span class="ph">and greater Los Angeles and Ventura County</span>.</p>
+  <p class="lede">Free consultations. Serving the Santa Clarita Valley, San Fernando Valley, Los Angeles and Ventura County.</p>
   <div class="contact-box">
     <div><span class="who">Call</span>
       <div class="line"><span class="ph">Shared phone number</span></div>
